@@ -3,8 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+$(function() {
+	// 조회
+	/* $.ajax({
+		type:"GET",
+		url:"http://localhost:8000/MC_OpenAPI_REST2/contacts",
+		data:{output:"json"}
+	})
+	.done(function(data){
+		console.log(data);
+	}) */
+	
+	
+	// 수정
+	var dataObj = {name:"쯔위", phone:"010-2222-3333", address:"섬"};
+	$.ajax({
+		type: "PUT",
+		url:"http://localhost:8000/MC_OpenAPI_REST2/contacts/1",
+		data:JSON.stringify(dataObj),
+		contentType:"application/json; charset=utf-8",
+		dataType:"json"
+	})
+	.done(function(data){
+		console.log(data);
+	})
+})
+</script>
+
 </head>
 <body>
-
+	<div id="a">ID: a</div>
+	<div class="test">Class: test</div>
+	<div class="test main">Class: main</div>
+	<div>None Attribute</div>
+	<h2>H2</h2>
 </body>
 </html>
