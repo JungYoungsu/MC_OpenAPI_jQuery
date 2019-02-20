@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+$(function() {
+	// 1. $.getJSON 를 쓰거나
+	// 2. $.ajax + data JSONP 를 씀
+	
+	
+	//var url = "http://sample.bmaster.kro.kr/contacts?callback=test"; // 패딩용 함수명이 test 
+	var url = "http://sample.bmaster.kro.kr/contacts?callback=?"; // 패딩용 함수명이 랜덤
+	$.getJSON(url, {output:"json"}, function(data){
+		console.log("JSONP callback");
+		console.log(data);
+	});
+	console.log("aa");
+	/* function test(data) {
+		console.log("JSONP callback");
+		console.log(data);
+	} */
+});
+</script>
+<!-- 테스트 -->
+<script src="http://sample.bmaster.kro.kr/contacts?callback=test"></script>
+</head>
+<body>
+
+</body>
+</html>
